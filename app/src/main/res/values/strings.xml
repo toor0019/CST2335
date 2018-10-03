@@ -3,4 +3,17 @@
     <string name="app_name">AndroidLabs</string>
     <string name="hello_message">Hello World</string>
     <string name="ButtonText">I\’m a button</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="switch_text">What does this do</string>
+    <string name="radiobutton_text">Radiobutton</string>
+    <string name="hint_text">Login Name</string>
+    <string name="checkbox_text">CheckBox</string>
+    <string name="my_pref">my_pref</string>
+    <string name="dialog_title">Dialog</string>
+    <string name="cancel">Cancel</string>
+     <string name="ok">OK</string>
+    <string name="dialog_message">message</string>
+
+
 </resources>

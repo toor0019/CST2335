@@ -3,4 +3,15 @@
     <string name="app_name">GHF FSDG</string>
     <string name="hello_message">DFGFG</string>
     <string name="ButtonText">ABCD</string>
+    <string name="login">Login</string>
+    <string name="password">Mantar</string>
+    <string name="switch_text">eH KI KRDA</string>
+    <string name="radiobutton_text">kuch b</string>
+    <string name="hint_text">thoda nam</string>
+    <string name="checkbox_text">chunan wala baksa</string>
+    <string name="my_pref">my_pref</string>
+    <string name="dialog_title">DABBA</string>
+    <string name="cancel">GALAT</string>
+    <string name="ok">THIK</string>
+    <string name="dialog_message">suneha</string>
 </resources>
