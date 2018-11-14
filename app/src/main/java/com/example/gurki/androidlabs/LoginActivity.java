@@ -23,8 +23,6 @@ public class LoginActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         Log.i(ACTIVITY_NAME, "In onCreate()");
         setContentView(R.layout.activity_login);
