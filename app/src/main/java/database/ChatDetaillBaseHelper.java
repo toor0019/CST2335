@@ -21,23 +21,24 @@ import static database.ChatDetailDbSchema.ChatDetailTable.Cols.UUID;
  */
 
 public class ChatDetaillBaseHelper extends SQLiteOpenHelper {
+    Cursor cursor;
     private static final int VERSION = 2;
-    private static final String DataBase_NAME = "cmessage.db";
+    private static final String DataBase_NAME = "Chatmessage.db";
     protected static final String ACTIVITY_NAME = "ChatDetailBaseHelper";
 
     public ChatDetaillBaseHelper(Context mContext) {
         super(mContext, DataBase_NAME, null, VERSION);
-
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.i(ACTIVITY_NAME, "Calling onCreate");
-        db.execSQL("create table " + ChatDetailTable.NAME + "(" +
-                " id_ integer primary key autoincrement, " +
-                ChatDetailTable.Cols.UUID + ", " +
-                ChatDetailTable.Cols.CHAT +
-                ")");
+        String  SQL="create table " + ChatDetailTable.NAME + " ( " +
+                ChatDetailTable.Cols.ID + " INTEGER primary key autoincrement, " +
+                ChatDetailTable.Cols.UUID + " TEXT, " +
+                ChatDetailTable.Cols.CHAT + " TEXT" +
+                ")";
+        db.execSQL(SQL);
     }
 
     @Override
@@ -49,6 +50,16 @@ public class ChatDetaillBaseHelper extends SQLiteOpenHelper {
 
     public void insertMessage(String message) {
 
+    }
+
+    public int getID(int id){
+        final SQLiteDatabase db = getWritableDatabase();
+
+        Cursor cursor = db.query(ChatDetailTable.NAME, new String[]{ChatDetailTable.Cols.ID}, null, null, null, null, null);
+        cursor.moveToPosition(id);
+        int ID = cursor.getInt(cursor.getColumnIndex(ChatDetailTable.Cols.ID));
+
+        return ID;
     }
 
     public List<ChatDetail> getAllMessage() {
@@ -75,6 +86,13 @@ public class ChatDetaillBaseHelper extends SQLiteOpenHelper {
 
         return chatDetails;
     }
-}
+
+   public void deleteMessage(long ID){
+       Log.i(ACTIVITY_NAME, "SQL MESSAGE:" + "id is"+ID );
+           getWritableDatabase().delete(ChatDetailTable.NAME,ChatDetailTable.Cols.ID+"=?",new String[]{""+ID});
+       }
+   }
+
+
 
 

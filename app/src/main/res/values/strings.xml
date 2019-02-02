@@ -17,6 +17,6 @@
     <string name="start_chat">Start Chat</string>
     <string name="start_weather_forecast">Start Weather Forecast</string>
     <string name="title_activity_weather_forecast">WeatherForecast</string>
-
+    <string name="delete_message">Delete this message</string>
 
 </resources>

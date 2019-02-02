@@ -3,7 +3,6 @@ package com.example.gurki.androidlabs;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.ImageWriter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -99,19 +98,15 @@ public class WeatherForecast extends Activity {
                 parser.setFeature(FEATURE_PROCESS_NAMESPACES, false);
                 parser.setInput(conn.getInputStream(), null);
                 int event = parser.getEventType();
+                boolean inside;
                 while (event != END_DOCUMENT) {
                     String name = parser.getName();
 
                     switch (event) {
                         case START_TAG:
 
-                            if (name.equals("temperature")) {
-                                mMin = parser.getAttributeValue(null, "min") + " ";
-                                publishProgress(25);
-                                mMax = parser.getAttributeValue(null, "max") + "";
-                                publishProgress(50);
-                                mCurrentTemperature = parser.getAttributeValue(null, "value") + "";
-                                publishProgress(75);
+                            if (name.equals("Route")) {
+                               inside=true;
 
                             } else if (name.equals("speed")) {
                                 mWind = parser.getAttributeValue(null, "value") + "";

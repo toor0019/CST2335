@@ -12,6 +12,7 @@ public class ChatDetailDbSchema {
 
 
         public static final class Cols{
+            public static final String ID="id_integer";
             public static final String UUID="uuid";
             public static final String CHAT="chat";
         }
